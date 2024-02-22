@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Macondo&family=Roboto&display=swap');
 
+:root{
+  --offWhite: #faf3eb;
+  --green: #53b234;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -8,6 +13,7 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
+  background-color: var(--offWhite);
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -45,6 +51,10 @@ nav a{
   font-size: 1.5em;
   color: black;
   padding: 15px;
+}
+nav a:hover{
+  color: var(--green);
+  text-decoration: underline;
 }
 
 .container{
