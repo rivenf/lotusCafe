@@ -133,4 +133,10 @@ nav a:hover{
 footer{
   border-top: 2px solid black;
   margin: 0px 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.socialIcon{
+  height: 45px;
+  padding: 10px;
 }
