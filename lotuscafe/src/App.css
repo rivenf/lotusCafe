@@ -75,6 +75,8 @@ header h1 {
 nav {
   display: flex;
   flex-direction: column;
+  align-items: end;
+  border-top: solid 2px var(--accent);
 }
 
 nav a {
@@ -91,6 +93,14 @@ nav a {
 nav a:hover {
   background-color: var(--background);
   color: var(--accent);
+}
+
+.dropBtn {
+  background-color: var(--background);
+  color: var(--accent);
+  border: none;
+  padding: 10px;
+  font-weight: bold;
 }
 
 .container {

@@ -1,9 +1,26 @@
+import { useState } from "react";
+
 function Navigation() {
-  return (
+  const [dropIsActive, setDropIsActive] = useState(false);
+
+  function toggleDrop() {
+    dropIsActive ? setDropIsActive(false) : setDropIsActive(true);
+  }
+
+  return dropIsActive ? (
     <nav>
+      <button className="dropBtn" onClick={toggleDrop}>
+        X
+      </button>
       <a href="#">About Us</a>
       <a href="#">View Menu</a>
       <a href="#">Make a Reservation</a>
+    </nav>
+  ) : (
+    <nav>
+      <button className="dropBtn" onClick={toggleDrop}>
+        X
+      </button>
     </nav>
   );
 }
