@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 function Navigation() {
   const [dropIsActive, setDropIsActive] = useState(false);
@@ -10,7 +13,7 @@ function Navigation() {
   return dropIsActive ? (
     <nav>
       <button className="dropBtn" onClick={toggleDrop}>
-        X
+        <FontAwesomeIcon icon={faXmark} />
       </button>
       <a href="#">About Us</a>
       <a href="#">View Menu</a>
@@ -19,7 +22,7 @@ function Navigation() {
   ) : (
     <nav>
       <button className="dropBtn" onClick={toggleDrop}>
-        X
+        <FontAwesomeIcon icon={faBars} />
       </button>
     </nav>
   );
@@ -29,7 +32,11 @@ export default function Header() {
   return (
     <>
       <header>
-        <img src="images/patio.jpg" alt="Lotus Cafe" className="headerBg" />
+        <img
+          src="images/pink_lotus.jpg"
+          alt="Lotus Cafe"
+          className="headerBg"
+        />
         <div className="gradient"></div>
         <div className="headerText">
           <img
