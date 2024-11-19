@@ -16,73 +16,169 @@ export default function Reservations() {
     setSubmitted(true);
   };
 
+  function resetForm() {
+    setInputs({});
+    setSubmitted(false);
+  }
+
   return (
     <section className="container">
       <h2>Make a Reservation</h2>
+
       {submitted ? (
-        <div>
-          <p>Thanks for your reservation!</p>
-        </div>
-      ) : (
-        <form>
-          <label>
-            Name:
-            <input
-              type="text"
-              name="username"
-              value={inputs.username || ""}
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Email:
-            <input
-              type="text"
-              name="email"
-              value={inputs.email || ""}
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Phone number:
-            <input
-              type="tel"
-              name="phone"
-              value={inputs.phone || ""}
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Number of guests:
-            <input
-              type="number"
-              name="guests"
-              value={inputs.guests || ""}
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Date:
-            <input
-              type="date"
-              name="date"
-              value={inputs.date || ""}
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Time:
-            <input
-              type="time"
-              name="time"
-              value={inputs.time || ""}
-              onChange={handleChange}
-            />
-          </label>
-          <button type="submit" onClick={handleSubmit}>
-            Submit Reservation
+        <>
+          <h3>Reservation confirmed!</h3>
+          <p>
+            Your reservation for {inputs.username}, party of {inputs.guests},
+            has been confirmed for {inputs.date} at {inputs.time}.
+          </p>
+          <p>See you soon!</p>
+          <button className="reserveBtn" onClick={resetForm}>
+            Make Another Reservation
           </button>
-        </form>
+        </>
+      ) : (
+        <>
+          <p>
+            Required fields are followed by{" "}
+            <span className="required" aria-label="required">
+              *
+            </span>
+          </p>
+
+          <form className="reserveForm">
+            <div>
+              <label htmlFor="username">
+                Name:{" "}
+                <span className="required" aria-label="required">
+                  *
+                </span>
+              </label>
+              <br />
+              <input
+                required
+                type="text"
+                name="username"
+                id="username"
+                value={inputs.username || ""}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div>
+              <label htmlFor="email">
+                Email:{" "}
+                <span className="required" aria-label="required">
+                  *
+                </span>
+              </label>
+              <br />
+              <input
+                required
+                type="text"
+                name="email"
+                id="email"
+                value={inputs.email || ""}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div>
+              <label htmlFor="phone">
+                Phone number:{" "}
+                <span className="required" aria-label="required">
+                  *
+                </span>
+              </label>
+              <br />
+              <input
+                required
+                type="tel"
+                name="phone"
+                id="phone"
+                value={inputs.phone || ""}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div>
+              <label htmlFor="guests">
+                Number of guests:{" "}
+                <span className="required" aria-label="required">
+                  *
+                </span>
+              </label>
+              <br />
+              <input
+                required
+                type="number"
+                name="guests"
+                id="guests"
+                value={inputs.guests || ""}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div>
+              <label htmlFor="date">
+                Date:{" "}
+                <span className="required" aria-label="required">
+                  *
+                </span>
+              </label>
+              <br />
+              <input
+                required
+                type="date"
+                name="date"
+                id="date"
+                value={inputs.date || ""}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div>
+              <label htmlFor="time">
+                Time:{" "}
+                <span className="required" aria-label="required">
+                  *
+                </span>
+              </label>
+              <br />
+              <select
+                required
+                name="time"
+                id="time"
+                value={inputs.time || ""}
+                onChange={handleChange}
+              >
+                <option value="5:00 pm">5:00 pm</option>
+                <option value="5:30 pm">5:30 pm</option>
+                <option value="6:00 pm">6:00 pm</option>
+                <option value="6:30 pm">6:30 pm</option>
+                <option value="7:00 pm">7:00 pm</option>
+                <option value="7:30 pm">7:30 pm</option>
+                <option value="8:00 pm">8:00 pm</option>
+                <option value="8:30 pm">8:30 pm</option>
+              </select>
+            </div>
+
+            <div>
+              <label htmlFor="specReq">Special requests:</label>
+              <br />
+              <textarea
+                name="specReq"
+                id="specReq"
+                value={inputs.specReq || ""}
+                onChange={handleChange}
+              />
+            </div>
+
+            <button className="reserveBtn" type="submit" onClick={handleSubmit}>
+              Submit Reservation
+            </button>
+          </form>
+        </>
       )}
     </section>
   );

@@ -116,6 +116,31 @@ img {
   max-width: 100%;
 }
 
+.reserveForm div {
+  margin-bottom: 20px;
+}
+
+.reserveForm div label {
+  font-size: 1em;
+}
+
+.required {
+  color: red;
+}
+
+.reserveBtn {
+  cursor: pointer;
+  background-color: var(--accent);
+  color: var(--background);
+  border: none;
+  border-radius: 5px;
+  padding: 8px 20px;
+}
+
+.reserveBtn:active {
+  transform: scale(90%);
+}
+
 footer {
   background-color: var(--accent);
   color: var(--background);
