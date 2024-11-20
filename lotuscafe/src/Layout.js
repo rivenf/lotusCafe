@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Outlet, Link } from "react-router-dom";
+import Footer from "./Footer.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -15,9 +17,9 @@ function Navigation() {
       <button className="dropBtn" onClick={toggleDrop}>
         <FontAwesomeIcon icon={faXmark} />
       </button>
-      <a href="#">About Us</a>
-      <a href="#">View Menu</a>
-      <a href="#">Make a Reservation</a>
+      <Link to="/">About us</Link>
+      <Link to="/menu">View the menu</Link>
+      <Link to="/reservations">Make a reservation</Link>
     </nav>
   ) : (
     <nav>
@@ -48,6 +50,10 @@ export default function Header() {
         </div>
       </header>
       <Navigation />
+
+      <Outlet />
+
+      <Footer />
     </>
   );
 }

@@ -1,21 +1,23 @@
 import "./App.css";
-import Header from "./Header.js";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./Layout.js";
 import Menu from "./Menu.js";
 import About from "./About.js";
 import Reservations from "./Reservations.js";
-import Footer from "./Footer.js";
+import NoPage from "./NoPage.js";
 
 function App() {
   return (
-    <>
-      <Header />
-      <main>
-        <About />
-        <Menu />
-        <Reservations />
-      </main>
-      <Footer />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<About />} />
+          <Route path="menu" element={<Menu />} />
+          <Route path="reservations" element={<Reservations />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
