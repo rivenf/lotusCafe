@@ -21,6 +21,10 @@ export default function About() {
           spot to indulge in guilt-free dining that's as satisfying for the body
           as it is for the taste buds.
         </p>
+        <div className="homeBtns">
+          <button>View the menu</button>
+          <button>Make a reservation</button>
+        </div>
       </div>
     </section>
   );

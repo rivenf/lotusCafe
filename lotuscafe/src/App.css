@@ -140,6 +140,24 @@ nav a:hover {
   align-items: center;
 }
 
+.homeBtns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.homeBtns button {
+  cursor: pointer;
+  background-color: var(--accent);
+  color: var(--background);
+  border: none;
+  border-radius: 5px;
+  width: 160px;
+  height: 32px;
+  margin: 10px;
+}
+
 .reserveForm div {
   margin-bottom: 20px;
 }
@@ -195,6 +213,10 @@ footer {
   nav a {
     width: auto;
     border: none;
+  }
+
+  .homeBtns {
+    flex-direction: row;
   }
 
   .reserveForm {
