@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
-function Navigation() {
+function MobileNav() {
   const [dropIsActive, setDropIsActive] = useState(false);
 
   function toggleDrop() {
@@ -13,46 +13,63 @@ function Navigation() {
   }
 
   return dropIsActive ? (
-    <nav>
+    <>
       <button className="dropBtn" onClick={toggleDrop}>
         <FontAwesomeIcon icon={faXmark} />
       </button>
       <Link to="/">About us</Link>
       <Link to="/menu">View the menu</Link>
       <Link to="/reservations">Make a reservation</Link>
-    </nav>
+    </>
   ) : (
-    <nav>
+    <>
       <button className="dropBtn" onClick={toggleDrop}>
         <FontAwesomeIcon icon={faBars} />
       </button>
-    </nav>
+    </>
   );
 }
 
-export default function Header() {
+function DesktopNav() {
   return (
     <>
-      <header>
+      <Link to="/">About us</Link>
+      <Link to="/menu">View the menu</Link>
+      <Link to="/reservations">Make a reservation</Link>
+    </>
+  );
+}
+
+function Header() {
+  return (
+    <header>
+      <img src="images/pink_lotus.jpg" alt="Lotus Cafe" className="headerBg" />
+      <div className="gradient"></div>
+      <div className="headerText">
         <img
-          src="images/pink_lotus.jpg"
-          alt="Lotus Cafe"
-          className="headerBg"
+          src="images/lotusLogo.png"
+          alt="Lotus Cafe logo"
+          className="logo"
         />
-        <div className="gradient"></div>
-        <div className="headerText">
-          <img
-            src="images/lotusLogo.png"
-            alt="Lotus Cafe logo"
-            className="logo"
-          />
+        <Link to="/">
           <h1>The Lotus Cafe</h1>
-        </div>
-      </header>
-      <Navigation />
+        </Link>
+      </div>
+    </header>
+  );
+}
 
+export default function Layout() {
+  return (
+    <>
+      <Header />
+      <nav className="mobileNav">
+        <MobileNav />
+      </nav>
+      <nav className="desktopNav">
+        <DesktopNav />
+      </nav>
       <Outlet />
-
       <Footer />
     </>
   );

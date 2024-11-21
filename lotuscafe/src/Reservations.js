@@ -23,11 +23,11 @@ export default function Reservations() {
 
   return (
     <section className="container">
-      <h2>Make a Reservation</h2>
+      <h1>Make a Reservation</h1>
 
       {submitted ? (
         <>
-          <h3>Reservation confirmed!</h3>
+          <h2>Reservation confirmed!</h2>
           <p>
             Your reservation for {inputs.username}, party of {inputs.guests},
             has been confirmed for {inputs.date} at {inputs.time}.
@@ -163,7 +163,7 @@ export default function Reservations() {
               </select>
             </div>
 
-            <div>
+            <div className="textArea">
               <label htmlFor="specReq">Special requests:</label>
               <br />
               <textarea

@@ -26,6 +26,14 @@ h6 {
   font-family: "Macondo", "Times New Roman", Times, serif;
 }
 
+h1 {
+  font-size: 1.75rem;
+}
+
+p {
+  text-align: justify;
+}
+
 header {
   width: 100%;
   height: 200px;
@@ -64,6 +72,11 @@ header {
   margin: 10px;
 }
 
+.headerText a {
+  text-decoration: none;
+  color: black;
+}
+
 .logo {
   max-height: 80px;
 }
@@ -76,7 +89,7 @@ header h1 {
 nav {
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: start;
   border-top: solid 2px var(--accent);
 }
 
@@ -87,7 +100,6 @@ nav a {
   padding: 10px 20px;
   width: 100%;
   border-bottom: 1px solid var(--accent);
-  text-align: right;
 }
 
 nav a:hover {
@@ -105,15 +117,27 @@ nav a:hover {
   font-size: 1.5rem;
 }
 
+.desktopNav {
+  display: none;
+}
+
 .container {
   width: 90%;
   margin: 20px auto;
   padding: 10px;
-  /* border: 1px solid red; */
 }
 
-img {
-  max-width: 100%;
+.aboutImg,
+.menuImg {
+  width: 100%;
+  max-width: 450px;
+}
+
+.aboutContainer,
+.menuSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .reserveForm div {
@@ -134,7 +158,8 @@ img {
   color: var(--background);
   border: none;
   border-radius: 5px;
-  padding: 8px 20px;
+  width: 160px;
+  height: 32px;
 }
 
 .reserveBtn:active {
@@ -153,4 +178,34 @@ footer {
   color: var(--background);
   text-decoration: none;
   margin: 5px;
+}
+
+@media screen and (min-width: 550px) {
+  .mobileNav {
+    display: none;
+  }
+
+  .desktopNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-bottom: 1px solid var(--accent);
+  }
+
+  nav a {
+    width: auto;
+    border: none;
+  }
+
+  .reserveForm {
+    display: grid;
+    grid-template-columns: 250px auto;
+  }
+
+  .textArea {
+    grid-column: span 2;
+  }
+}
+
+@media screen and (min-width: 1000px) {
 }

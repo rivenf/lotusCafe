@@ -34,7 +34,7 @@ const entrees = [
     id: 1,
     item: "Mushroom Lentil Burger",
     description:
-      "House-made lentil and mushroom patty topped with caramelized onions, avocado, lettuce, and tomato, served on a whole wheat bun",
+      "House-made lentil and mushroom patty topped with caramelized onions, avocado, lettuce, and tomato, served on a whole wheat bun.",
     price: "$12.99",
   },
   {
@@ -105,8 +105,10 @@ function MenuSection(props) {
 
   return (
     <div className="menuSection">
-      <h2>{props.title}</h2>
-      <ul>{menuItems}</ul>
+      <div className="MenuText">
+        <h2>{props.title}</h2>
+        <ul>{menuItems}</ul>
+      </div>
       <img src={props.imgUrl} alt={props.title} className="menuImg" />
     </div>
   );
