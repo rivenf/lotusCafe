@@ -10,10 +10,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/lotusCafe" element={<Layout />}>
           <Route index element={<About />} />
-          <Route path="menu" element={<Menu />} />
-          <Route path="reservations" element={<Reservations />} />
+          <Route path="/lotusCafe/menu" element={<Menu />} />
+          <Route path="/lotusCafe/reservations" element={<Reservations />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/lotusCafe/static/css/main.1c800cbf.css",
-    "main.js": "/lotusCafe/static/js/main.3bdc715d.js",
+    "main.js": "/lotusCafe/static/js/main.ea0a9689.js",
     "static/js/453.361ce3ae.chunk.js": "/lotusCafe/static/js/453.361ce3ae.chunk.js",
     "index.html": "/lotusCafe/index.html",
     "main.1c800cbf.css.map": "/lotusCafe/static/css/main.1c800cbf.css.map",
-    "main.3bdc715d.js.map": "/lotusCafe/static/js/main.3bdc715d.js.map",
+    "main.ea0a9689.js.map": "/lotusCafe/static/js/main.ea0a9689.js.map",
     "453.361ce3ae.chunk.js.map": "/lotusCafe/static/js/453.361ce3ae.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1c800cbf.css",
-    "static/js/main.3bdc715d.js"
+    "static/js/main.ea0a9689.js"
   ]
 }
