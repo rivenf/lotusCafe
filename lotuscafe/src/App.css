@@ -1,0 +1,255 @@
+@import url("https://fonts.googleapis.com/css2?family=Macondo&family=Roboto&display=swap");
+
+:root {
+  --background: #faf3eb;
+  --text: #434343;
+  --accent: #357239;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  background-color: var(--background);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Macondo", "Times New Roman", Times, serif;
+}
+
+h1 {
+  font-size: 1.75rem;
+}
+
+p {
+  text-align: justify;
+}
+
+header {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.headerBg {
+  width: 100vw;
+  position: absolute;
+  z-index: -10;
+  top: 0;
+}
+
+.gradient {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  height: 400px;
+  width: 500px;
+  opacity: 0.9;
+  background-image: radial-gradient(
+    circle,
+    var(--background) 45%,
+    rgba(0, 0, 0, 0) 80%
+  );
+}
+
+.headerText {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  margin: 10px;
+}
+
+.headerText a {
+  text-decoration: none;
+  color: black;
+}
+
+.logo {
+  max-height: 80px;
+}
+
+header h1 {
+  font-size: 2.5em;
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  border-top: solid 2px var(--accent);
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--accent);
+  font-size: 1em;
+  padding: 10px 20px;
+  width: 100%;
+  border-bottom: 1px solid var(--accent);
+}
+
+nav a:hover {
+  background-color: var(--accent);
+  color: var(--background);
+}
+
+.dropBtn {
+  background-color: var(--background);
+  color: var(--accent);
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.desktopNav {
+  display: none;
+}
+
+.container {
+  width: 90%;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+.aboutImg,
+.menuImg {
+  width: 100%;
+  max-width: 450px;
+}
+
+.aboutContainer,
+.menuSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.homeBtns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.homeBtns button {
+  cursor: pointer;
+  background-color: var(--accent);
+  color: var(--background);
+  border: none;
+  border-radius: 5px;
+  width: 160px;
+  height: 32px;
+  margin: 10px;
+}
+
+.reserveForm div {
+  margin-bottom: 20px;
+}
+
+.reserveForm div label {
+  font-size: 1em;
+}
+
+.required {
+  color: red;
+}
+
+.reserveBtn {
+  cursor: pointer;
+  background-color: var(--accent);
+  color: var(--background);
+  border: none;
+  border-radius: 5px;
+  width: 160px;
+  height: 32px;
+}
+
+.reserveBtn:active {
+  transform: scale(90%);
+}
+
+footer {
+  background-color: var(--accent);
+  color: var(--background);
+  font-size: 0.75em;
+  padding: 20px;
+}
+
+.socials a {
+  font-size: 2rem;
+  color: var(--background);
+  text-decoration: none;
+  margin: 5px;
+}
+
+@media screen and (min-width: 550px) {
+  .mobileNav {
+    display: none;
+  }
+
+  .desktopNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-bottom: 1px solid var(--accent);
+  }
+
+  nav a {
+    width: auto;
+    border: none;
+  }
+
+  .homeBtns {
+    flex-direction: row;
+  }
+
+  .reserveForm {
+    display: grid;
+    grid-template-columns: 250px auto;
+  }
+
+  .textArea {
+    grid-column: span 2;
+  }
+
+  footer {
+    padding: 20px 40px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .container {
+    width: 80%;
+    max-width: 1000px;
+  }
+
+  .aboutContainer {
+    flex-direction: row-reverse;
+  }
+
+  .aboutImg,
+  .menuImg {
+    margin-left: 40px;
+  }
+
+  .menuSection {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+}
