@@ -1,7 +1,7 @@
 {
   "name": "lotuscafe",
   "version": "0.1.0",
-  "homepage": "https://rivenf.github.io/lotusCafe/lotuscafe/build",
+  "homepage": "https://rivenf.github.io/lotusCafe",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
